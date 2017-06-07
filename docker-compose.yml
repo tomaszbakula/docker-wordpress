@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  db:
+    image: mariadb:10.3.0
+    volumes:
+      - ./db:/var/lib/mysql
+    networks:
+      - back
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wp:
+    depends_on:
+      - db
+    image: wordpress:latest
+    volumes:
+      - ./www:/var/www/html/wp-content
+    networks:
+      - reverse-proxy
+      - back
+    expose:
+        - "80"
+    environment:
+      VIRTUAL_HOST: test.dev
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+
+networks:
+  reverse-proxy:
+    external:
+      name: reverse-proxy
+  back:
+    driver: bridge
