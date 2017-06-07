@@ -26,7 +26,7 @@ services:
     expose:
         - "80"
     environment:
-      VIRTUAL_HOST: test.dev
+      VIRTUAL_HOST: myapp.dev
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
