@@ -6,7 +6,7 @@ services:
     volumes:
       - ./db:/var/lib/mysql
     networks:
-      - proxy
+      - default
     environment:
       MYSQL_ROOT_PASSWORD: toor
       MYSQL_DATABASE: wordpress
@@ -20,6 +20,7 @@ services:
       - ./www:/var/www/html/wp-content
     networks:
       - proxy
+      - default
     environment:
       VIRTUAL_HOST: example.app
       WORDPRESS_DB_HOST: db:3306
