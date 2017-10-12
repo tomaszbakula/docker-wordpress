@@ -15,13 +15,13 @@ services:
   wp:
     depends_on:
       - db
-    image: wordpress:latest
+    image: wordpress
     volumes:
       - ./www:/var/www/html/wp-content
     networks:
       - proxy
     environment:
-      VIRTUAL_HOST: myapp.dev
+      VIRTUAL_HOST: example.app
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
