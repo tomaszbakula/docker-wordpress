@@ -17,4 +17,4 @@ It allows to serve your projects under project-name.localhost domain.
 Open do *docker-compose.yml* file, search and replace all **example** occurrences in the file to the project name of your choice. Save changes and run `docker-compose up` in the terminal.
 
 ---
-If you would like to serve your websites with different suffix then .localhost you can use [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) here is the guide how to do with the [configuration details](https://coderwall.com/p/qknu2g/local-docker-development-with-virtual-hosts).
+If you would like to serve your websites with different suffix then .localhost you can use [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html). Here is [a guide](https://coderwall.com/p/qknu2g/local-docker-development-with-virtual-hosts) how to do this.
