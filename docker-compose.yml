@@ -22,7 +22,7 @@ services:
       - proxy
       - default
     environment:
-      VIRTUAL_HOST: example.app
+      VIRTUAL_HOST: example.localhost
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
@@ -34,7 +34,7 @@ services:
       - proxy
       - default
     environment:
-      VIRTUAL_HOST: pma.example.app
+      VIRTUAL_HOST: pma.example.localhost
       PMA_HOST: db
       PMA_USER: wordpress
       PMA_PASSWORD: wordpress
