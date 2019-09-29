@@ -12,6 +12,11 @@ It allows to serve your projects under project-name.localhost domain.
 
 `docker run -d --name nginx-proxy --net reverse-proxy -p 80:80 --restart unless-stopped -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy`
 
+#### To increase maximum upload size:
+`docker exec -it nginx-proxy /bin/bash`  
+`cd /etc/nginx/conf.d/`  
+`echo "client_max_body_size 0;" > uploadsize.conf`  
+
 ### 3. Configure the project.
 
 Open do *docker-compose.yml* file, search and replace all **example** occurrences in the file to the project name of your choice. Save changes and run `docker-compose up` in the terminal.
